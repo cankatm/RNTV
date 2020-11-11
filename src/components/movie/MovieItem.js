@@ -3,11 +3,20 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 import styles from './styles';
 
-const MovieItem = () => {
+const MovieItem = ({
+  movie,
+  isFocused,
+  isSelected,
+  handleFocusMovie,
+  handleSelectMovie,
+}) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => {
+        handleFocusMovie(movie.id), handleSelectMovie(movie.id);
+      }}>
       <View style={styles.movieItemContainer}>
-        <Text>Movie Item</Text>
+        {isSelected && <Text>{movie.name}</Text>}
       </View>
     </TouchableOpacity>
   );
