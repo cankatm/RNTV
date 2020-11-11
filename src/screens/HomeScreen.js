@@ -7,9 +7,19 @@ import * as colors from '../helpers/colors';
 import DummyMovieData from '../helpers/dummyMovieData';
 
 const HomeScreen = () => {
+  handleFocusMovie = () => {};
+
+  handleSelectMovie = () => {};
+
   renderMovies = () => {
     return DummyMovieData.map((movie) => {
-      return <MovieItem />;
+      return (
+        <MovieItem
+          movie={movie}
+          handleFocusMovie={this.handleFocusMovie}
+          handleSelectMovie={this.handleSelectMovie}
+        />
+      );
     });
   };
 
