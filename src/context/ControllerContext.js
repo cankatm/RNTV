@@ -1,12 +1,12 @@
 import React from 'react';
-import {useLocalStore} from 'mobx-react';
+import {useLocalObservable} from 'mobx-react';
 
 import {createControllerStore} from '../store/controllerStore';
 
 const ControllerContext = React.createContext(null);
 
 export const ControllerProvider = ({children}) => {
-  const controllerStore = useLocalStore(createControllerStore());
+  const controllerStore = useLocalObservable(createControllerStore);
 
   return (
     <ControllerContext.Provider value={controllerStore}>
@@ -15,4 +15,4 @@ export const ControllerProvider = ({children}) => {
   );
 };
 
-export const useControllerStore = React.useContext(ControllerContext);
+export const useControllerStore = () => React.useContext(ControllerContext);
