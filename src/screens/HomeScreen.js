@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, useTVEventHandler} from 'react-native';
 import {Observer} from 'mobx-react';
 
 import {MovieItem} from '../components/movie';
@@ -9,6 +9,25 @@ import DummyMovieData from '../helpers/dummyMovieData';
 
 const HomeScreen = () => {
   const controllerStore = useControllerStore();
+
+  const myTVEventHandler = (evt) => {
+    console.log(evt);
+    switch (evt.eventType) {
+      case 'right':
+        return controllerStore.handleMovement(1);
+      case 'left':
+        return controllerStore.handleMovement(-1);
+      case 'back':
+      case 'menu':
+        return controllerStore.handleSelectMovie(null);
+      case 'playPause':
+        return controllerStore.handleSelectMovie(controllerStore.focusedId);
+      default:
+        break;
+    }
+  };
+
+  useTVEventHandler(myTVEventHandler);
 
   renderMovies = () => {
     return DummyMovieData.map((movie) => {
