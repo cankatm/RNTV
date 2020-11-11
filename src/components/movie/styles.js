@@ -6,7 +6,7 @@ export default StyleSheet.create({
     backgroundColor: 'blue',
     marginHorizontal: 16,
   },
-  movieItemContainer: {
+  movieItemImage: {
     width: 200,
     height: 300,
     backgroundColor: 'red',

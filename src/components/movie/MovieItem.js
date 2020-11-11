@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 
 import styles from './styles';
 import * as colors from '../../helpers/colors';
@@ -24,9 +24,12 @@ const MovieItem = ({
           styles.movieItemFrame,
           {backgroundColor: isFocused ? colors.smokeGrey : colors.nightBlue},
         ]}>
-        <View style={styles.movieItemContainer}>
-          {isSelected && <Text>{movie.name}</Text>}
-        </View>
+        <Image
+          style={styles.movieItemImage}
+          source={movie.imgSrc}
+          resizeMode="cover"
+        />
+        {isSelected && <Text>{movie.name}</Text>}
       </View>
     </TouchableOpacity>
   );
