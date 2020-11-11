@@ -1,3 +1,5 @@
+import DummyMovieData from '../helpers/dummyMovieData';
+
 export function createControllerStore() {
   return {
     focusedId: 1,
@@ -7,6 +9,14 @@ export function createControllerStore() {
     },
     handleSelectMovie(id) {
       this.selectedId = id;
+    },
+    handleMovement(movementValue) {
+      if (
+        this.focusedId + movementValue >= 1 &&
+        this.focusedId + movementValue <= DummyMovieData.length
+      ) {
+        this.focusedId = this.focusedId + movementValue;
+      }
     },
   };
 }
