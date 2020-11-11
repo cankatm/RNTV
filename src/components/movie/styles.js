@@ -4,7 +4,7 @@ import * as colors from '../../helpers/colors';
 
 export default StyleSheet.create({
   movieItemFrame: {
-    padding: 24,
+    padding: 8,
     backgroundColor: 'blue',
     marginHorizontal: 16,
   },
