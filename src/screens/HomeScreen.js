@@ -18,6 +18,7 @@ const HomeScreen = () => {
     return DummyMovieData.map((movie) => {
       return (
         <MovieItem
+          key={movie.id}
           movie={movie}
           isFocused={focusedId === movie.id}
           isSelected={selectedId === movie.id}
