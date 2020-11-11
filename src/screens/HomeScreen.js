@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
+import {Observer} from 'mobx-react';
 
 import {MovieItem} from '../components/movie';
 import styles from './styles';
+import {useControllerStore} from '../context/ControllerContext';
 import * as colors from '../helpers/colors';
 import DummyMovieData from '../helpers/dummyMovieData';
 
@@ -10,9 +12,11 @@ const HomeScreen = () => {
   const [focusedId, setFocusedId] = useState(1);
   const [selectedId, setSelectedId] = useState(null);
 
-  handleFocusMovie = (id) => setFocusedId(id);
+  const controllerStore = useControllerStore();
 
-  handleSelectMovie = (id) => setSelectedId(id);
+  // handleFocusMovie = (id) => setFocusedId(id);
+
+  // handleSelectMovie = (id) => setSelectedId(id);
 
   renderMovies = () => {
     return DummyMovieData.map((movie) => {
@@ -20,19 +24,24 @@ const HomeScreen = () => {
         <MovieItem
           key={movie.id}
           movie={movie}
-          isFocused={focusedId === movie.id}
-          isSelected={selectedId === movie.id}
-          handleFocusMovie={this.handleFocusMovie}
-          handleSelectMovie={this.handleSelectMovie}
+          controllerStore={controllerStore}
+          isFocused={controllerStore.focusedId === movie.id}
+          isSelected={controllerStore.selectedId === movie.id}
+          // handleFocusMovie={controllerStore.handleFocusMovie}
+          // handleSelectMovie={controllerStore.handleSelectMovie}
         />
       );
     });
   };
 
   return (
-    <View style={styles.homeScreenContainer}>
-      <View style={styles.homeScreenRow}>{this.renderMovies()}</View>
-    </View>
+    <Observer>
+      {() => (
+        <View style={styles.homeScreenContainer}>
+          <View style={styles.homeScreenRow}>{this.renderMovies()}</View>
+        </View>
+      )}
+    </Observer>
   );
 };
 
