@@ -6,5 +6,7 @@ export default StyleSheet.create({
   homeScreenContainer: {
     flex: 1,
     backgroundColor: colors.nightBlue,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
