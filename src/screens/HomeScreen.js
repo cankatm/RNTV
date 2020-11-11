@@ -10,15 +10,17 @@ const HomeScreen = () => {
   const [focusedId, setFocusedId] = useState(1);
   const [selectedId, setSelectedId] = useState(null);
 
-  handleFocusMovie = () => {};
+  handleFocusMovie = (id) => setFocusedId(id);
 
-  handleSelectMovie = () => {};
+  handleSelectMovie = (id) => setSelectedId(id);
 
   renderMovies = () => {
     return DummyMovieData.map((movie) => {
       return (
         <MovieItem
           movie={movie}
+          focusedId={focusedId}
+          selectedId={selectedId}
           handleFocusMovie={this.handleFocusMovie}
           handleSelectMovie={this.handleSelectMovie}
         />
