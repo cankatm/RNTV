@@ -16,8 +16,10 @@ const MovieItem = ({
         handleFocusMovie(movie.id), handleSelectMovie(movie.id);
       }}
       onBlur={() => handleSelectMovie(null)}>
-      <View style={styles.movieItemContainer}>
-        {isSelected && <Text>{movie.name}</Text>}
+      <View style={styles.movieItemFrame}>
+        <View style={styles.movieItemContainer}>
+          {isSelected && <Text>{movie.name}</Text>}
+        </View>
       </View>
     </TouchableOpacity>
   );
