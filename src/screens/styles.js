@@ -9,4 +9,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  homeScreenRow: {
+    flexDirection: 'row',
+  },
 });

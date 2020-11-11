@@ -13,7 +13,11 @@ const HomeScreen = () => {
     });
   };
 
-  return <View style={styles.homeScreenContainer}>{this.renderMovies()}</View>;
+  return (
+    <View style={styles.homeScreenContainer}>
+      <View style={styles.homeScreenRow}>{this.renderMovies()}</View>
+    </View>
+  );
 };
 
 export default HomeScreen;
