@@ -19,8 +19,8 @@ const HomeScreen = () => {
       return (
         <MovieItem
           movie={movie}
-          focusedId={focusedId}
-          selectedId={selectedId}
+          isFocused={focusedId === movie.id}
+          isSelected={selectedId === movie.id}
           handleFocusMovie={this.handleFocusMovie}
           handleSelectMovie={this.handleSelectMovie}
         />
