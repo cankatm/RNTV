@@ -5,6 +5,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "androidTV": "npx react-native run-android",
+    "tvOS": "npx react-native run-ios  --simulator \"Apple TV\" --scheme \"RNTV-tvOS\"",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
