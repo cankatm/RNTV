@@ -5,5 +5,6 @@ export default StyleSheet.create({
     width: 200,
     height: 300,
     backgroundColor: 'red',
+    marginHorizontal: 16,
   },
 });
