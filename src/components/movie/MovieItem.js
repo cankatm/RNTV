@@ -5,13 +5,7 @@ import {useControllerStore} from '../../context/ControllerContext';
 import styles from './styles';
 import * as colors from '../../helpers/colors';
 
-const MovieItem = ({
-  movie,
-  isFocused,
-  isSelected,
-  handleFocusMovie,
-  handleSelectMovie,
-}) => {
+const MovieItem = ({movie, isFocused, isSelected}) => {
   const controllerStore = useControllerStore();
 
   return (
@@ -21,7 +15,6 @@ const MovieItem = ({
         controllerStore.handleFocusMovie(movie.id),
           controllerStore.handleSelectMovie(movie.id);
       }}
-      // onPress={() => console.log(controllerStore)}
       onFocus={() => controllerStore.handleFocusMovie(movie.id)}
       onBlur={() => controllerStore.handleSelectMovie(null)}>
       <View
