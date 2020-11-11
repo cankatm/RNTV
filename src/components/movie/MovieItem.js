@@ -29,7 +29,7 @@ const MovieItem = ({
           source={movie.imgSrc}
           resizeMode="cover"
         />
-        {isSelected && <Text>{movie.name}</Text>}
+        {isSelected && <Text style={styles.movieItemText}>{movie.name}</Text>}
       </View>
     </TouchableOpacity>
   );
