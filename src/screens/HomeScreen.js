@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 
 import {MovieItem} from '../components/movie';
@@ -7,6 +7,9 @@ import * as colors from '../helpers/colors';
 import DummyMovieData from '../helpers/dummyMovieData';
 
 const HomeScreen = () => {
+  const [focusedId, setFocusedId] = useState(1);
+  const [selectedId, setSelectedId] = useState(null);
+
   handleFocusMovie = () => {};
 
   handleSelectMovie = () => {};
