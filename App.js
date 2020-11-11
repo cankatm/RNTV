@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-import {ControllerProvider} from './src/context/controllerContext';
+import {ControllerProvider} from './src/context/ControllerContext';
 import HomeScreen from './src/screens/HomeScreen';
 
 const App = () => {
