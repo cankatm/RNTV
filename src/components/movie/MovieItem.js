@@ -14,7 +14,8 @@ const MovieItem = ({
     <TouchableOpacity
       onPress={() => {
         handleFocusMovie(movie.id), handleSelectMovie(movie.id);
-      }}>
+      }}
+      onBlur={() => handleSelectMovie(null)}>
       <View style={styles.movieItemContainer}>
         {isSelected && <Text>{movie.name}</Text>}
       </View>
